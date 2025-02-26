@@ -1,0 +1,30 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
+# Azure
+.terraform.tfstate.d/
+azure.tfvars
+
+# AWS
+*.pem
+*.key
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Terraform plan output
+plan.out
+
+# System Files
+.DS_Store
+Thumbs.db
