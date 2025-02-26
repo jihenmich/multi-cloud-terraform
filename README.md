@@ -15,52 +15,44 @@ Stelle sicher, dass du folgende Tools installiert hast:
 ## 🚀 Einrichtung & Deployment
 
 ### 1️⃣ Repository klonen  
-\`\`\`sh
+```sh
 git clone https://github.com/jihenmich/multi-cloud-terraform.git
 cd multi-cloud-terraform
-\`\`\`
+```
 
-### 2️⃣ AWS und Azure konfigurieren  
-
-#### AWS-Zugangsdaten einrichten:  
-\`\`\`sh
+2️⃣ AWS und Azure konfigurieren
+AWS-Zugangsdaten einrichten:
+```sh
 aws configure
-\`\`\`
-
-#### Azure-Zugangsdaten einrichten:  
-\`\`\`sh
+```
+Azure-Zugangsdaten einrichten:
+```sh
 az login
 az account set --subscription "<dein-abonnement-name>"
-\`\`\`
+```
+3️⃣ Terraform-Variablen definieren
+Erstelle die Datei terraform.tfvars mit deinen Regionen:
 
-### 3️⃣ Terraform-Variablen definieren  
-Erstelle die Datei \`terraform.tfvars\` mit deinen Regionen:  
-\`\`\`sh
+```sh
 cat <<EOF > terraform.tfvars
 aws_region   = "eu-central-1"  # Ändere dies ggf. auf deine bevorzugte Region
-azure_region = "Germany West Central"    # Passe die Azure-Region entsprechend an
+azure_region = "Germany West Central"  # Passe die Azure-Region entsprechend an
 EOF
-\`\`\`
-
-### 4️⃣ Terraform initialisieren  
-\`\`\`sh
+```
+4️⃣ Terraform initialisieren
+```sh
 terraform init
-\`\`\`
-
-### 5️⃣ Terraform-Plan prüfen  
-\`\`\`sh
+```
+5️⃣ Terraform-Plan prüfen
+```sh
 terraform plan
-\`\`\`
-
-### 6️⃣ Infrastruktur bereitstellen  
-\`\`\`sh
+```
+6️⃣ Infrastruktur bereitstellen
+```sh
 terraform apply -auto-approve
-\`\`\`
-
----
-
-## 🛑 Infrastruktur löschen  
-Falls du die Ressourcen entfernen möchtest, führe aus:  
-\`\`\`sh
+```
+🛑 Infrastruktur löschen
+Falls du die Ressourcen entfernen möchtest, führe aus:
+```sh
 terraform destroy -auto-approve
-\`\`\`
+```
